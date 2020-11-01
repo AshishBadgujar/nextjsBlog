@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     mediaUrl: {
         type: String,
         required: false,
-        default: '/images/person_1.jpg'
+        default: '/df.png'
     }
 })
 
