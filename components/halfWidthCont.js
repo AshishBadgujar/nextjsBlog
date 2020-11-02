@@ -23,7 +23,7 @@ export default function HalfWidthCont({ blogs }) {
                                                 <div className="contents">
                                                     <h2><Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>{blog.title}</a></Link></h2>
                                                     <Truncate lines={3} ellipsis={<span>...<Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>Read more</a></Link></span>}>
-                                                        {blog.content}
+                                                        <span>{blog.content}</span>
                                                     </Truncate>
                                                     <div className="post-meta">
                                                         <span className="d-block">-{blog.author.name}</span>

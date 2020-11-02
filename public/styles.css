@@ -39,12 +39,12 @@ button :hover{
 }
 .corousel{
   background: url("./home-bg.jpg")no-repeat center center/cover ;
-  max-height: 500px;
+  height:400px;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .slog{
   color: #333;
