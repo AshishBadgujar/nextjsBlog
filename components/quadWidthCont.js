@@ -10,9 +10,6 @@ export default function QuadWidthCont({ blogs }) {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-9">
-                        <div className="section-title">
-                            <h2>Recent Blogs</h2>
-                        </div>
                         {blogs.slice(0, 4).map(blog => {
                             return (
                                 <div className="post-entry-2 d-flex" key={blog._id}>
@@ -20,7 +17,7 @@ export default function QuadWidthCont({ blogs }) {
                                     <div className="contents order-md-1 pl-0">
                                         <h2><Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>{blog.title}</a></Link></h2>
                                         <Truncate lines={4} ellipsis={<span>...<Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>Read more</a></Link></span>}>
-                                            <p>{blog.content}</p>
+                                            <span>{blog.content}</span>
                                         </Truncate>
                                         <div className="post-meta">
                                             <span className="d-block">-{blog.author.name}</span>

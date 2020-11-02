@@ -11,6 +11,9 @@ export default function Home({ blogs, users }) {
     return (
         <>
             <Corousel />
+            <div className="section-title">
+                <h2>Recent Blogs</h2>
+            </div>
             <QuadWidthCont blogs={blogs} />
             <FullWidthCont blogs={blogs} />
             <Writers writers={users} />

@@ -2,6 +2,7 @@ html{
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
+  font-size:104%;
 }
 nav .nav-wrapper{
   border: 3px solid white !important;
@@ -38,13 +39,12 @@ button :hover{
 }
 .corousel{
   background: url("./home-bg.jpg")no-repeat center center/cover ;
-  height: 80vh;
+  max-height: 500px;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15% !important;
 }
 .slog{
   color: #333;
