@@ -22,7 +22,7 @@ export default function HalfWidthCont({ blogs }) {
                                                 <img src={blog.mediaUrl} alt="" className="thumbnail" />
                                                 <div className="contents">
                                                     <h2><Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>{blog.title}</a></Link></h2>
-                                                    <Truncate lines={3} ellipsis={<span>...<Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>Read more</a></Link></span>}>
+                                                    <Truncate lines={2} ellipsis={<span>...<Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>Read more</a></Link></span>}>
                                                         <span>{blog.content}</span>
                                                     </Truncate>
                                                     <div className="post-meta">
