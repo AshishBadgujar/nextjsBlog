@@ -39,7 +39,7 @@ button :hover{
 }
 .corousel{
   background: url("./home-bg.jpg")no-repeat center center/cover ;
-  height:400px;
+  height:250px;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
