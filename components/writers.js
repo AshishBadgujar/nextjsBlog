@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Writers({ writers }) {
     return (
         <>
-            <div className="site-section">
+            <div className="site-section pt-2 pb-2">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-9">
