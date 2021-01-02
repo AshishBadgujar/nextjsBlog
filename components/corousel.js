@@ -5,7 +5,7 @@ export default function Corousel() {
         <>
             <div className="corousel" >
                 <h1 className="slog">Write your imagination !</h1>
-                <h4 className="slog">Lorem ipsum dolor sit amet consectetur officia! </h4>
+                <h4 className="slog">Just write every day of your life. Read intensely. Then see what happens.</h4>
             </div>
         </>
     )
