@@ -98,7 +98,7 @@ function Blog({ blogs, blogData, commentsArray, }) {
                 <div className="row">
                     <div className="col-lg-8 single-content">
                         <p className="mb-5">
-                            <img src={blogData.mediaUrl} alt="Image" className="img-fluid" />
+                            <img src={blogData.mediaUrl} alt="Image" className="img-fluid" style={{width:"100%"}} />
                         </p>
                         {user.email == blogData.author.email &&
                             <div className="right">

@@ -45,6 +45,7 @@ button :hover{
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-attachment: fixed;
 }
 .slog{
   color: #333;
