@@ -57,7 +57,7 @@ function Search({ blogs, users }) {
 
 export default Search
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const res1 = await Axios.get(`${baseUrl}/api/blogs`)
     const blogs = res1.data
     const res2 = await Axios.get(`${baseUrl}/api/signup`)

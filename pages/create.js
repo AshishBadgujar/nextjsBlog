@@ -97,7 +97,7 @@ export default function Create() {
     )
 }
 
-export async function getServerSideProps(ctx) {
+export async function getStaticProps(ctx) {
     const { blogUser } = parseCookies(ctx)
 
     if (!blogUser) {
