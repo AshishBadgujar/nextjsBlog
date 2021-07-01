@@ -11,24 +11,18 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await Axios.post(`${baseUrl}/api/login`, {
+        const res = await Axios.post(`${baseUrl}/api/login`, {
             email,
             password: pw
-        }).then(res => {
-            if (res.data.err) {
-                M.toast({ html: res.data.err, classes: "red" });
-            } else {
-                cookie.set('blogToken', res.data.token)
-                cookie.set('blogUser', res.data.user)
-                M.toast({ html: `you are successfully logged in !`, classes: "#00e676 green accent-3 rounded" });
-                router.push('/')
-            }
         })
-            .catch(error => {
-                console.log(error)
-                M.toast({ html: `Something went wrong please try again !`, classes: "red rounded" });
-            })
-
+        if (res.data.err) {
+            M.toast({ html: res.data.err, classes: "red" });
+        } else {
+            cookie.set('blogToken', res.data.token)
+            cookie.set('blogUser', res.data.user)
+            M.toast({ html: `you are successfully logged in !`, classes: "#00e676 green accent-3 rounded" });
+            router.push('/')
+        }
     }
     return (
         <div className="site-section bg-light">

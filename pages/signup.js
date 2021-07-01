@@ -13,30 +13,24 @@ export default function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(name, email, password, bio)
-        await Axios.post(`${baseUrl}/api/signup`, {
+        const res = await Axios.post(`${baseUrl}/api/signup`, {
             name,
             email,
             password,
             bio
-        }).then(res => {
-            console.log(res.data)
-            if (res.data.message) {
-                M.toast({ html: res.data.message, classes: '#00e676 green accent-3 rounded' })
-                router.push('/login')
-            }
-            if (res.data.err) {
-                M.toast({ html: res.data.err, classes: 'red rounded' })
-            }
         })
-            .catch(error => {
-                console.log(error)
-            })
+        if (res.data.message) {
+            M.toast({ html: res.data.message, classes: '#00e676 green accent-3 rounded' })
+            router.push('/login')
+        }
+        if (res.data.err) {
+            M.toast({ html: res.data.err, classes: 'red rounded' })
+        }
     }
     return (
         <div className="site-section bg-light">
             <div className="container">
-                <form action="" onSubmit={(e) => handleSubmit(e)}>
+                <form onSubmit={(e) => handleSubmit(e)}>
                     <div className="section-title mt-4">
                         <h2>Signup here !</h2>
                     </div>
