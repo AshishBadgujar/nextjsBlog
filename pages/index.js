@@ -24,7 +24,7 @@ export default function Home({ blogs, users }) {
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const res = await Axios.get(`${baseUrl}/api/blogs`)
     const blogs = res.data
     const res2 = await Axios.get(`${baseUrl}/api/users`)
