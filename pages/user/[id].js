@@ -3,7 +3,8 @@ import Axios from 'axios'
 import { useRouter } from 'next/router'
 import baseUrl from '../../helpers/baseUrl'
 import { parseCookies } from 'nookies'
-import QuadWidthCont from '../../components/quadWidthCont'
+import QuadWidthCont from '../../components/quadWidthCont';
+import Image from 'next/image'
 
 function user({ userData, blogs }) {
     const [name, setName] = useState(userData.name)
@@ -60,7 +61,7 @@ function user({ userData, blogs }) {
                     <h4>Edit your Profile !</h4>
                     <form action="" encType="multipart/form-data" onSubmit={(e) => saveUser(e)}>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                            <img src={userData.mediaUrl} alt="Image" className="z-depth-3" style={{ width: '120px', height: '120px', borderRadius: '50%' }} />
+                            <Image src={userData.mediaUrl} alt="Image" className="z-depth-3 rounded-circle" width={120} height={120} />
                         </div>
                         <div className="file-field input-field">
                             <div className="btn-floating halfway-fab waves-effect waves-light #9e9e9e grey">
@@ -129,8 +130,7 @@ function user({ userData, blogs }) {
                 <div className="row">
                     <div className="container">
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                            <img src={userData.mediaUrl} alt="Image" className="z-depth-3" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '20px' }} />
-
+                            <Image src={userData.mediaUrl} alt="Image" className="z-depth-3rounded-circle mb-2" width={150} height={150} />
                             <h2>{userData.name}</h2>
                         </div>
 

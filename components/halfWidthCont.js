@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import moment from 'moment'
 import Truncate from 'react-truncate';
+import Image from 'next/image'
 
 export default function HalfWidthCont({ blogs }) {
     const [catColl, setCatColl] = useState(['Politics', 'Business', 'Health', 'Design', 'Sports', 'Technology'])
@@ -19,7 +20,7 @@ export default function HalfWidthCont({ blogs }) {
                                     if (blog.category == cat) {
                                         return (
                                             <div className="post-entry-2 d-flex">
-                                                <img src={blog.mediaUrl} alt="" className="thumbnail" />
+                                                <Image src={blog.mediaUrl} alt="thumb" className="thumbnail" height={300} width={300} />
                                                 <div className="contents">
                                                     <h2><Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>{blog.title}</a></Link></h2>
                                                     <Truncate lines={2} ellipsis={<span>...<Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>Read more</a></Link></span>}>

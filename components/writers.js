@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Writers({ writers }) {
     return (
@@ -13,11 +14,13 @@ export default function Writers({ writers }) {
                             </div>
                             {writers.slice(0, 6).map(writer => {
                                 return (
-                                    <div className="post-entry-2 d-flex" key={writer._id}>
-                                        <img src={writer.mediaUrl} alt="" style={{ height: '70px', width: '70px', borderRadius: '50%', marginRight: '20px', marginTop: '15px' }} />
-                                        <div className="contents order-md-1 pl-0">
+                                    <div className="post-entry-2 d-flex align-items-center" key={writer._id}>
+                                        <div style={{ marginRight: '20px' }}>
+                                            <Image src={writer.mediaUrl} alt="writer" width={90} height={90} className="rounded-circle" />
+                                        </div>
+                                        <div className="contents p-0">
                                             <h2><Link href="/user/[id]" as={`/user/${writer._id}`}><a className="text-left">{writer.name}</a></Link></h2>
-                                            <p className="mb-3">{writer.bio}</p>
+                                            <p className="mb-0">{writer.bio}</p>
                                             <div className="post-meta">
                                                 <span className="d-block"><a href="#">{writer.email}</a></span>
                                             </div>

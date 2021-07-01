@@ -3,7 +3,8 @@ import Axios from 'axios'
 import { parseCookies } from 'nookies'
 import { useRouter } from 'next/router'
 import baseUrl from '../helpers/baseUrl'
-import moment from 'moment'
+import moment from 'moment';
+import Image from 'next/image'
 
 function Comments({ commentsArray, blogData }) {
     const router = useRouter()
@@ -48,7 +49,7 @@ function Comments({ commentsArray, blogData }) {
 
     return (
         <>
-            <div className="pt-5" >
+            <div className="pt-4" >
                 <div className="section-title">
                     <h2>Comments</h2>
                 </div>
@@ -70,16 +71,14 @@ function Comments({ commentsArray, blogData }) {
                         reviews.reverse().map(comment => {
                             return (
                                 <li className="comment" key={comment._id}>
-                                    <div className="vcard bio">
-                                        <img src={comment.commentedBy.mediaUrl} alt="Image placeholder" />
-                                    </div>
+                                    <Image src={comment.commentedBy.mediaUrl} width={70} height={70} alt="Image" className="img-fluidid rounded-circle" />
                                     <div className="comment-body">
-                                        <h3>{comment.commentedBy.name}</h3>
+                                        <h3 className="m-0">{comment.commentedBy.name}</h3>
                                         <div className="meta">{moment(comment.createdAt).fromNow()}</div>
                                         <p>{comment.text}</p>
-                                        {(user.email == comment.commentedBy.email || user.email == blogData.authorEmail) ?
+                                        {(user.email === comment.commentedBy.email || user.email === blogData.authorEmail) &&
                                             <p><a className="reply" onClick={() => handleDelete(comment._id)}>Delete</a></p>
-                                            : null}
+                                        }
                                     </div>
                                 </li>
                             )

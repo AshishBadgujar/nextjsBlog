@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import Axios from 'axios'
 import baseUrl from '../helpers/baseUrl'
 import { useRouter } from 'next/router'
-import { parseCookies } from 'nookies'
+import { parseCookies } from 'nookies';
+import Image from 'next/image'
 
 export default function Create() {
     const router = useRouter()
@@ -84,7 +85,7 @@ export default function Create() {
                             <input className="file-path validate" placeholder="File" type="text" id="file" />
                         </div>
                     </div>
-                    <img src={media ? URL.createObjectURL(media) : ""} className="responsive-img" />
+                    <Image src={media ? URL.createObjectURL(media) : ""} className="responsive-img" alt="img" width={600} height={400} />
                     <div className="input-field">
                         <i className="material-icons prefix">create</i>
                         <textarea id="textarea" value={content} onChange={(e) => setContent(e.target.value)} className="materialize-textarea"></textarea>

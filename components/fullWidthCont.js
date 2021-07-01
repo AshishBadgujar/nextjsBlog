@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import moment from 'moment'
 import Truncate from 'react-truncate';
+import Image from 'next/image'
 
 export default function FullWidthCont({ blogs }) {
     return (
@@ -13,8 +14,10 @@ export default function FullWidthCont({ blogs }) {
                     </div>
                     {blogs.slice(0, 1).map(blog => {
                         return (
-                            <div className="half-post-entry d-block d-lg-flex bg-light">
-                                <img src={blog.mediaUrl} alt="" className="img-bg" />
+                            <div className="half-post-entry d-block d-lg-flex bg-light mb-5">
+                                <div className="contents">
+                                    <Image src={blog.mediaUrl} alt="blog" width={600} height={600} />
+                                </div>
                                 <div className="contents">
                                     <span className="caption">Latest Blog</span>
                                     <h2><Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>{blog.title}</a></Link></h2>

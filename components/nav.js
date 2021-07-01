@@ -14,9 +14,9 @@ export default function Navbar() {
     }, [])
     return (
         <>
-            <div className="container">
+            <div className="container pb-0 mb-2">
                 <nav className="z-depth-0">
-                    <div className="nav-wrapper #fafafa grey lighten-5">
+                    <div className="nav-wrapper #fafafa grey lighten-5 m-0">
                         <ul className="hide-on-med-and-down">
                             <li><Link href="/"><a className="text-left">Home</a></Link></li>
                             <li><Link href="/category/[cat]" as={`/category/Politics`}><a className="text-left">Politics</a></Link></li>
@@ -47,7 +47,7 @@ export default function Navbar() {
                     </div>
                 </nav>
             </div>
-            <ul className="sidenav ml-4" id="mobile-demo" ref={navRef}>
+            <ul className="sidenav" id="mobile-demo" ref={navRef}>
                 <li><Link href="/search"><a className="text-left right"> <button className="btn btn-secondary"><span className="icon-search"></span></button></a></Link></li>
                 <li><Link href="/"><a className="text-left">Home</a></Link></li>
                 <li><Link href="/category/[cat]" as={`/category/Politics`}><a className="text-left">Politics</a></Link></li>

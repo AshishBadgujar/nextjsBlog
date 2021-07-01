@@ -2,7 +2,9 @@ html{
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
-  font-size:104%;
+  margin: 0;
+  padding: 0;
+  font-size:19px;
 }
 nav .nav-wrapper{
   border: 3px solid white !important;
@@ -33,9 +35,6 @@ button :hover{
 .btn-floating{
   top: -47px !important;
   right: 35% !important;
-}
-.img-bg{
-  height: 20rem !important;
 }
 .corousel{
   background: url("./home-bg.jpg")no-repeat center center/cover ;

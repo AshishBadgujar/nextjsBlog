@@ -5,6 +5,7 @@ import moment from 'moment'
 import Axios from 'axios'
 import baseUrl from '../../helpers/baseUrl'
 import Truncate from 'react-truncate';
+import Image from 'next/image'
 
 export default function Category({ category, blogs }) {
     return (
@@ -19,10 +20,9 @@ export default function Category({ category, blogs }) {
                             if (blog.category == category) {
                                 return (
                                     <div className="post-entry-2 d-flex" key={blog._id}>
-                                        <img src={blog.mediaUrl} alt="" className="thumbnail order-md-2 mr-3" />
-                                        <div className="contents order-md-1 pl-0">
+                                        <div className="contents pl-0 pb-0">
                                             <h2><Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>{blog.title}</a></Link></h2>
-                                            <Truncate lines={4} ellipsis={<span>...<Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>Read more</a></Link></span>}>
+                                            <Truncate lines={3} ellipsis={<span>...<Link href="/blog/[id]" as={`/blog/${blog._id}`} ><a>Read more</a></Link></span>}>
                                                 <p>{blog.content}</p>
                                             </Truncate>
                                             <div className="post-meta">
@@ -30,6 +30,7 @@ export default function Category({ category, blogs }) {
                                                 <span className="date-read">{moment(blog.updatedAt).fromNow()}<span className="icon-star2"></span></span>
                                             </div>
                                         </div>
+                                        <Image src={blog.mediaUrl} alt="thumbnail" width={250} height={250} className="thumbnail" />
                                     </div>
                                 )
                             }

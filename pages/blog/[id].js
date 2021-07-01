@@ -5,7 +5,7 @@ import baseUrl from '../../helpers/baseUrl'
 import { parseCookies } from 'nookies'
 import Comments from '../../components/comments'
 import moment from 'moment'
-import MinWidthCont from '../../components/minWidthCont'
+import Image from 'next/image'
 
 function Blog({ blogs, blogData, commentsArray, }) {
     const [title, setTitle] = useState(blogData.title)
@@ -93,12 +93,12 @@ function Blog({ blogs, blogData, commentsArray, }) {
     }
 
     return (
-        <div className="site-section">
+        <div className="site-section pt-5">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-8 single-content">
+                    <div className="single-content">
                         <p className="mb-5">
-                            <img src={blogData.mediaUrl} alt="Image" className="img-fluid" style={{width:"100%"}} />
+                            <Image src={blogData.mediaUrl} alt="Image" width={960} height={500} />
                         </p>
                         {user.email == blogData.author.email &&
                             <div className="right">
@@ -109,11 +109,9 @@ function Blog({ blogs, blogData, commentsArray, }) {
                         <h1 className="mb-4">
                             {blogData.title}
                         </h1>
-                        <div className="post-meta d-flex mb-5">
-                            <div className="bio-pic mr-3">
-                                <img src={blogData.author.mediaUrl} alt="Image" className="img-fluidid" />
-                            </div>
-                            <div className="vcard">
+                        <div className="post-meta d-flex mb-4 align-items-center">
+                            <Image src={blogData.author.mediaUrl} width={70} height={70} alt="Image" className="img-fluidid rounded-circle" />
+                            <div className="vcard ml-3">
                                 <span className="d-block">{blogData.author.name}</span>
                                 <span className="date-read">{moment(blogData.updatedAt).fromNow()}<span className="icon-star2"></span></span>
                             </div>
@@ -121,9 +119,6 @@ function Blog({ blogs, blogData, commentsArray, }) {
                         {getmodal()}
                         {updateBlog()}
                         <p>{blogData.content}</p>
-                    </div>
-                    <div className="col-lg-4">
-                        <MinWidthCont blogs={blogs} />
                     </div>
                     <Comments commentsArray={commentsArray} blogData={blogData} />
                 </div>
